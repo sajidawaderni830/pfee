@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>Que faire.</title>
+    <!-- Path to Framework7 Library CSS, Material Theme -->
+    <link rel="stylesheet" href="css/framework7.material.min.css">
+    <!-- Path to Framework7 color related styles, Material Theme -->
+    <link rel="stylesheet" href="css/framework7.material.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="fonts.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/awesome-bootstrap-checkbox/0.3.7/awesome-bootstrap-checkbox.min.css'><link rel="stylesheet" href="./style.css">
+    
+      </head>
+  <body>
+  <div class="statusbar-overlay"></div>
+    <!-- Views -->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main">
+        <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-fixed toolbar-fixed">
+          <!-- Page, "data-page" contains page name -->
+          <div data-page="index" class="page">
+
+            <!-- Top Navbar. In Material theme it should be inside of the page-->
+            <div class="navbar theme-lightblue">
+              <div class="navbar-inner">
+               <a href="#" data-panel="left" class="open-panel"><img src="images/menu.svg" width="28px" class="menu"></a>
+
+              </div>
+            </div>
+              <!-- Panels Overlay -->
+  <div class="panel-overlay"></div>
+
+
+  <!-- Right Panel with Cover effect -->
+  <div class="panel panel-left panel-cover">
+
+    <div class="list-block">
+      <ul >
+        <li>
+          <a href="Accueil.html" class="item-link item-content external">
+              <div class="item-media"><span class>  <i class="fa fa-home"></i> </span></div>
+              <div class="item-inner">
+              <div class="item-title">Accueil</div>
+              </div>
+          </a>
+        </li>
+        <li>
+          <a href="profile.html" class="item-link item-content external">
+            <div class="item-media"><span class="icon-happy"></span></div>
+            
+              <div class="item-inner">
+              <div class="item-title">Profile</div>
+              </div>
+          </a>
+        </li>
+        <li>
+          <a href="quefaire.html" class="item-link item-content external">
+              <div class="item-media"><span class="icon-star-full"></span></div>
+              <div class="item-inner">
+              <div class="item-title"><b>Que faire</b></div>
+              </div>
+          </a>
+        </li>
+        <li>
+          <a href="visitar.html" class="item-link item-content external">
+              <div class="item-media"><span class="icon-camera"></span></div>
+              <div class="item-inner">
+              <div class="item-title">Que visiter</div>
+              </div>
+          </a>
+        </li>
+        <li>
+          <a href="restaurant.html" class="item-link item-content external">
+            <div class="item-media"><span class="icon-spoon-knife"></span></div>
+            <div class="item-inner">
+              <div class="item-title">Où manger</div>
+    
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="salondethe.html" class="item-link item-content external">
+            <div class="item-media"><span class="icon-glass2"></span></div>
+            <div class="item-inner">
+              <div class="item-title">Salon de thé</div>
+    
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="hotels.html" class="item-link item-content external">
+            <div class="item-media"><span class="icon-office"></span></div>
+            <div class="item-inner">
+              <div class="item-title">Où se reposer</div>
+    
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="recherche.html" class="item-link item-content external">
+              <div class="item-media"><span class="icon-location2"></span></div>
+              <div class="item-inner">
+              <div class="item-title">La carte</div>
+              </div>
+          </a>
+        </li>
+        <li>
+          <a href="apropos.html" class="item-link item-content external">
+            <div class="item-media"><span class="icon-info"></span></div>
+            <div class="item-inner">
+              <div class="item-title">À propos de</div>
+    
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="rechercheoffre.html" class="item-link item-content external">
+            <div class="item-media"><span class>  <i class="fa fa-search"></i> </span></div>
+            <div class="item-inner">
+              <div class="item-title">Rechercher</div>
+    
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="login.html" class="item-link item-content external" onclick="deconnecter();">
+            <div class="item-media"><span class>  <i class="fa fa-sign-out"></i> </span></div>
+            <div class="item-inner">
+              <div class="item-title">Déconnecter</div>
+    
+            </div>
+          </a>
+        </li>
+      </ul>
+
+</div>
+</div>
+
+  <div class="page-content">
+
+<!--Card (Seccion)-->
+<div class="content-block-title" style="color: transparent;">Que faire</div>
+<!-- Inicia Anuncio -->
+  <div id="ver" class="anuncio c1">
+      <iframe src="bnr/banner.html" width="100%" height="150x;" scrolling="none" ></iframe>
+      <div>
+      <a href="#" class="button button-raised  color-red" onclick="ocultar()" style="width:100%">masquer l'annonce</a>
+      </div>
+  </div>
+<br><br><br>
+<!-- End Anuncio -->
+
+ 		<div class="card demo-card-header-pic ">
+  		<div style="background-image:url(images/pic19.jpg)" valign="bottom" class="card-header color-white no-border"></div>
+  		<div class="card-content">
+    	<div class="card-content-inner">
+      	<p class="color-gray"> Excursion d'une demi-journée au site de tournage de Star Wars au départ de Tozeur</p>
+      	<p align="justify">Appel à tous les fans de Star Wars. Au cours de cette visite guidée exclusive d’une demi-journée, vous découvrirez les lieux de tournage réels de votre épopée intergalactique préférée. Voyagez entre les sites touristiques à bord d'un véhicule 4x4 privé et climatisé et découvrez de près la maison de Luke Skywalker, les rues de Mos Espa, les Yardang et bien d'autres. Une visite guidée d'une demi-journée des lieux de tournage de Star Wars et de L'Attaque des clones Découvrez quelques-uns des paysages désertiques les plus accidentés et difficiles à atteindre de la Tunisie Détendez-vous et profitez des avantages VIP, tels que le ramassage et le débarquement d'hôtel à domicile, pour plus de commodité Cochez plusieurs sites pittoresques au cours d'une seule et même visite d'une demi-journée, ce qui vous permet de gagner du temps
+          .</p>
+    	</div>
+	  </div>
+    <div class="list-block accordion-list">
+      <ul>
+     
+        <li class="accordion-item"><a href="#" class="item-content item-link">
+          <div class="item-inner">
+          <div class="item-title color-red"><span class="icon-location"></span> Emplacement</p></div>
+       </div></a>
+       <div class="accordion-item-content">
+
+           <iframe src="maps/sto-dom.2.html" width="100%" height="250px" frameborder="2" seamless></iframe>
+
+       </div>
+       </li>
+
+      </ul>
+    </div>
+		</div>
+
+<!-- Inicia Anuncio -->
+  <div id="ver" class="anuncio">
+      <iframe src="bnr/banner.html" width="100%" height="140x;" scrolling="none" ></iframe>
+      <div align="right"><a href="#" class="button button-raised  color-red" onclick="ocultar()" style="width:100%">masquer l'annonce</a></div>
+  </div>
+<br><br><br>
+<!-- End Anuncio -->
+<div class="card demo-card-header-pic">
+      <div style="background-image:url(images/pic21.jpg)" valign="bottom" class="card-header color-white no-border"><p class="title-c">North Africa Tour : Utique Punic -Medina of Bizerte- Ichkeul park</p></div>
+      <div class="card-content">
+      <div class="card-content-inner">
+       <!--<p class="color-gray">Calle Ayuntamiento #17, Col Centro, Izúcar de Matamoros.</p>--> 
+        <p align="justify">Un circuit qui vous permet de découvrir le charme de l'Afrique du Nord, le circuit est facile à plein de beaux paysages à explorer. S'il y a un endroit à visiter quand vous venez en Tunisie, c'est bien la ville touristique de Bizerte. Vous passerez une excursion d'une journée paisible et vivrez cette journée dans un autre environnement. Vous tomberez amoureux de cette ville.
+
+          </p>
+      </div>
+    </div>
+    <div class="list-block accordion-list">
+      <ul>
+     
+        <li class="accordion-item"><a href="#" class="item-content item-link">
+          <div class="item-inner">
+          <div class="item-title color-red"><span class="icon-location"></span> Emplacement</p></div>
+       </div></a>
+       <div class="accordion-item-content">
+
+           <iframe src="maps/cultura-map.html" width="100%" height="250px" frameborder="2" seamless></iframe>
+
+       </div>
+       </li>
+
+      </ul>
+    </div>
+    </div>
+
+<!-- New Card section-->
+<div class="card demo-card-header-pic">
+      <div style="background-image:url(images/tekrouna.jpg)" valign="bottom" class="card-header color-white no-border"><p class="title-c">Villages berbères hors du temps Tekrouna et Zriba Alia</p></div>
+      <div class="card-content">
+      <div class="card-content-inner">
+      
+        <p align="justify"> Une visite à Takrouna: Ce village berbère est un site historique qui a joué un rôle déterminant dans l’issue de la Seconde Guerre mondiale en Tunisie. Il forme avec Jradou et Zriba un site à l'architecture typique et traditionnelle: maisons en pierre, salles voûtées et cours intérieures. Sa beauté n'a d'égal que sa simplicité. L'aspect intime de cette visite est le charme des vieux villages berbères.
+
+         </p>
+      </div>
+    </div>
+    <div class="list-block accordion-list">
+      <ul>
+      <li class="accordion-item"><a href="#" class="item-content item-link">
+          <div class="item-inner">
+          <div class="item-title color-red"><span class="icon-location"></span> Emplacement</p></div>
+       </div></a>
+       <div class="accordion-item-content">
+
+           <iframe src="maps/sn-nic.html" width="100%" height="250px" frameborder="2" seamless></iframe>
+
+       </div>
+       </li>
+
+      </ul>
+    </div>
+    </div>
+<!--New Card Section-->
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="js/lightbox.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/functions.js"></script>
+    <script>  
+			function deconnecter(){
+			
+			localStorage.removeItem("idclient");
+			localStorage.removeItem("nomclient");
+			localStorage.removeItem("login.html");
+			
+			}
+			</script>
+  </body>
+</html>

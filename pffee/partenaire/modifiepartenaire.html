@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Partenaire</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+  </head>
+  <body >
+    <div  class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+         
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item nav-logout d-none d-lg-block">
+              <a class="nav-link" href="index.html">
+                  <i class="mdi mdi-arrow-left-bold"></i>
+              </a>
+            </li>
+
+
+            <li class="nav-item nav-logout d-none d-lg-block" >
+              <a class="nav-link" href="notification.html" >
+                <i class="mdi mdi-bell-outline"></i>
+
+              </a>
+            </li>
+            <!--hna-->
+            <li class="nav-item nav-logout d-none d-lg-block" >
+              <a class="nav-link" href="login.html"  onclick="deconnecter();">
+                <i class="mdi mdi-power"></i>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+       </nav>
+       
+
+       <div class="content-wrapper">
+        <div class="page-header">
+        
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item active" aria-current="page"></li>
+            </ol>
+          </nav>
+        </div>
+        <div class="container ">
+          <div class="col-md-8 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+
+                <span id="result"></span>
+								<br>
+
+                <h1 >Modifier Profil</h1>
+                  <br/>
+                <form class="forms-sample" role="form"> 
+
+                     <div class="form-group">
+                        <label for="form-field-1">Matricule fiscale</label>
+                        <input type="text" class="form-control" id="matricule_fisquale" placeholder="Username">
+                      </div>
+
+                      <div class="form-group ">
+                        <label for="form-field-select-1"> Type d'activité</label>
+                        
+                          <select class="form-control" id="type_activite">
+                            
+					     	              <option value="Restaurant">Restaurant</option>
+							                <option value="Salon de the">Salon de thé</option>
+						                	<option value="Hotel">hôtel</option>
+						                	<option value="Agence de voyage">Agence de voyage</option>
+                          </select>
+                       
+                      </div>
+                    
+                      
+                  <div class="form-group">
+                    <label for="form-field-1">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Username">
+                  </div>
+                  <div class="form-group">
+                    <label for="form-field-1">Adresse</label>
+                    <input type="text" class="form-control" id="adress" placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="form-field-1">adresse email</label>
+                    <input type="text" class="form-control" id="email" placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="form-field-1">Telephone</label>
+                    <input type="text" class="form-control" id="telephone" placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="form-field-1">Facebook</label>
+                    <input type="text" class="form-control" id="FB" placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="form-field-1">Instagram</label>
+                    <input type="text" class="form-control" id="Insta" placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="form-field-1">Mot de passe</label>
+                    <input type="password" class="form-control" id="mot_de_passe" placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="form-field-1">Confirmer mot de passe</label>
+                    <input type="password" class="form-control" id="mot_de_passe2" placeholder="Password">
+                  </div>
+                 
+                  
+                  <button type="button" class="btn btn-gradient-primary mr-2" onclick="modifierpartenaire();">  Modifier</button>
+               
+                </form>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      <!-- content-wrapper ends -->
+ 
+    </div>
+    <!-- main-panel ends -->
+
+  <!-- page-body-wrapper ends -->
+     <!-- partial:../../partials/_footer.html -->
+      <footer class="footer">
+        <div class="container-fluid clearfix">
+        
+        </div>
+      </footer>
+      <!-- partial -->
+
+<!-- container-scroller -->
+<!-- plugins:js -->
+<script src="assets/vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="assets/vendors/chart.js/Chart.min.js"></script>
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="assets/js/off-canvas.js"></script>
+<script src="assets/js/hoverable-collapse.js"></script>
+<script src="assets/js/misc.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page -->
+<script src="assets/js/dashboard.js"></script>
+<script src="assets/js/todolist.js"></script>
+<!-- End custom js for this page -->
+
+		
+<script>
+ 
+
+	var url_string = window.location.href
+	var url = new URL(url_string);
+  var c = localStorage.getItem("idpar");
+	console.log(c);
+	
+	
+	var url3 = "http://192.168.43.47:3000/partenaires/" + c ;
+	
+	
+	var request = new XMLHttpRequest();
+	
+	
+	// Open a new connection, using the GET request on the URL endpoint
+	request.open('GET', url3, true)
+	
+	request.onload = function() {
+	// Begin accessing JSON data here
+	
+	// Begin accessing JSON data here
+	var data = JSON.parse(this.response)
+
+	document.getElementById("name").value = data.nom;
+	document.getElementById("email").value  = data.email ;
+	document.getElementById("mot_de_passe").value   = data.mot_de_passe ;
+	 document.getElementById("telephone").value   = data.telephone ;
+	document.getElementById("adress").value   = data.location.formattedAddress ;
+  document.getElementById("matricule_fisquale").value   = data. matricule_fisquale ;
+  document.getElementById("type_activite").value   = data.type_activite ;
+ document.getElementById("FB").value = data.lien_fb;
+ document.getElementById("Insta").value = data.lien_insta;				 
+
+	}
+	
+	// Send request
+	request.send()
+
+	</script>
+  	<script>
+      function modifierpartenaire(){
+      
+                
+  var url_string = window.location.href
+  var url = new URL(url_string);
+  var c = localStorage.getItem("idpar"); 
+  var url3 = "http://192.168.43.47:3000/partenaires/" + c ;
+  console.log(c);
+
+  if (document.getElementById("mot_de_passe2").value == document.getElementById("mot_de_passe").value)
+{  
+      var data = {};
+      
+      
+      data.email  = document.getElementById("email").value;
+      data.nom  = document.getElementById("name").value;
+      data.mot_de_passe = document.getElementById("mot_de_passe").value;
+      data.telephone  = document.getElementById("telephone").value;
+      data.adress  = document.getElementById("adress").value;
+      data.matricule_fisquale  = document.getElementById("matricule_fisquale").value;
+      data.type_activite  = document.getElementById("type_activite").value;
+      data.lien_fb =  document.getElementById("FB").value;
+      data.lien_insta = document.getElementById("Insta").value;
+      
+      var json = JSON.stringify(data);
+      console.log(json);
+      var xhr = new XMLHttpRequest();
+      xhr.open("PUT", url3, true);
+      xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+      xhr.onload = function () {
+        var partenaires = JSON.parse(xhr.responseText);
+        if (xhr.readyState == 4 && xhr.status == "200") {
+
+        document.getElementById("result").innerHTML = 	  
+			`<div class="alert alert-block alert-success" >
+				<center>
+					<button type="button" class="close" data-dismiss="alert">
+					 <i class="ace-icon fa fa-times"></i>
+					</button>
+					<h1><i class="ace-icon fa fa-check green"></i>
+						partenaire modifié			
+					</h1><strong class="green"></strong>
+					</center>
+                   </div>`;
+ 
+			  } else {
+				alert(partenaires.message);
+					console.error(partenaires);
+	
+					
+			  }
+			}
+			xhr.send(json);
+		}else{
+			document.getElementById("result").innerHTML = 	  
+			`<div class="alert alert-block alert-danger" >
+				<center>
+					<button type="button" class="close" data-dismiss="alert">
+					 <i class="ace-icon fa fa-times"></i>
+					</button>
+					<h1><i class="ace-icon fa fa-times red"></i>
+						Confirmer votre mot de passe		
+					</h1><strong class="green"></strong>
+					</center>
+                   </div>`;
+		  	}
+		}
+          
+      </script>
+
+
+<script>  
+function deconnecter(){
+
+localStorage.removeItem("idpar");
+localStorage.removeItem("nompar");
+localStorage.removeItem("login.html");
+
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>Hotel</title>
+    <!-- Path to Framework7 Library CSS, Material Theme -->
+    <link rel="stylesheet" href="css/framework7.material.min.css">
+    <!-- Path to Framework7 color related styles, Material Theme -->
+    <link rel="stylesheet" href="css/framework7.material.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="fonts.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/awesome-bootstrap-checkbox/0.3.7/awesome-bootstrap-checkbox.min.css'><link rel="stylesheet" href="./style.css">
+    <style >
+   
+      #map{ 
+          width: 100%;
+          height: 250px; 
+        }
+      </style>
+      <script>
+                
+        StarOutUrl=		'StarOut.gif';		//image par d�faut
+        StarOverUrl=	'StarOver.gif';		//image d'une �toile s�lectionn�e
+        StarBaseId=		'Star';				//id de base des �toiles
+        NbStar=			5;					//nombre d'�toiles
+        
+        LgtStarBaseId=StarBaseId.lastIndexOf('');
+        
+        function NotationSystem() {
+          for (i=1;i<NbStar+1;i++) {
+            var img			=document.getElementById('Star'+i);
+              
+            img.onclick		=function() { 
+              if (Name2Nb(this.id)==1)
+              cont="Echec";
+                else if (Name2Nb(this.id)==2)
+              cont="Passable";
+                else if (Name2Nb(this.id)==3)
+              cont="Bien";
+                else if (Name2Nb(this.id)==4)
+              cont="Très bien";
+              else
+                cont="Excellent";
+  
+                ajouteravioffre(); 
+              
+              
+            };
+            
+            img.alt			='Donner la note de '+i;
+            img.src			=StarOutUrl;
+            img.onmouseover	=function() {StarOver(this.id);};
+            img.onmouseout	=function() {StarOut(this.id);};
+          }
+        }
+        
+        function StarOver(Star) {
+          StarNb=Name2Nb(Star);
+          for (i=1;i<(StarNb*1)+1;i++) {
+            document.getElementById('Star'+i).src=StarOverUrl;
+          }
+        }
+        
+        function StarOut(Star) {
+          StarNb=Name2Nb(Star);
+          for (i=1;i<(StarNb*1)+1;i++) {
+            document.getElementById('Star'+i).src=StarOutUrl;
+          }
+        }
+        
+        function Name2Nb(Star) {
+          //Le survol d'une �toile ne nous permet pas de conna�tre directement son num�ro
+          //Cette fonction extrait donc ce num�ro � partir de l'Id
+          StarNb=Star.slice(LgtStarBaseId);
+          return(StarNb);
+        } 
+        
+        </script>
+
+  </head>
+  <body onload="NotationSystem();" >
+    <!-- Views -->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main">
+        <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-fixed toolbar-fixed">
+          <!-- Page, "data-page" contains page name -->
+          <div data-page="index" class="page" ng-controller="IndexPageController">
+
+            <!-- Top Navbar. In Material theme it should be inside of the page-->
+            <div class="navbar theme-blue">
+              <div class="navbar-inner">
+              <a href="#" data-panel="left" class="open-panel"><img src="images/menu.svg" width="28px" class="menu"></a>
+              
+
+              </div>
+            </div>
+              <!-- Panels Overlay -->
+  <div class="panel-overlay"></div>
+
+
+  <!-- Right Panel with Cover effect -->
+  <div class="panel panel-left panel-cover">
+
+    <div class="list-block">
+      <ul >
+        <li>
+          <a href="Accueil.html" class="item-link item-content external">
+              <div class="item-media"><span class>  <i class="fa fa-home"></i> </span></div>
+              <div class="item-inner">
+              <div class="item-title">Accueil</div>
+              </div>
+          </a>
+        </li>
+        <li>
+          <a href="profile.html" class="item-link item-content external">
+            <div class="item-media"><span class="icon-happy"></span></div>
+            
+              <div class="item-inner">
+              <div class="item-title">Profile</div>
+              </div>
+          </a>
+        </li>
+        <li>
+          <a href="quefaire.html" class="item-link item-content external">
+              <div class="item-media"><span class="icon-star-full"></span></div>
+              <div class="item-inner">
+              <div class="item-title"><b>Que faire</b></div>
+              </div>
+          </a>
+        </li>
+        <li>
+          <a href="visitar.html" class="item-link item-content external">
+              <div class="item-media"><span class="icon-camera"></span></div>
+              <div class="item-inner">
+              <div class="item-title">Que visiter</div>
+              </div>
+          </a>
+        </li>
+        <li>
+          <a href="restaurant.html" class="item-link item-content external">
+            <div class="item-media"><span class="icon-spoon-knife"></span></div>
+            <div class="item-inner">
+              <div class="item-title">Où manger</div>
+    
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="salondethe.html" class="item-link item-content external">
+            <div class="item-media"><span class="icon-glass2"></span></div>
+            <div class="item-inner">
+              <div class="item-title">Salon de thé</div>
+    
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="hotels.html" class="item-link item-content external">
+            <div class="item-media"><span class="icon-office"></span></div>
+            <div class="item-inner">
+              <div class="item-title">Où se reposer</div>
+    
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="recherche.html" class="item-link item-content external">
+              <div class="item-media"><span class="icon-location2"></span></div>
+              <div class="item-inner">
+              <div class="item-title">La carte</div>
+              </div>
+          </a>
+        </li>
+        <li>
+          <a href="apropos.html" class="item-link item-content external">
+            <div class="item-media"><span class="icon-info"></span></div>
+            <div class="item-inner">
+              <div class="item-title">À propos de</div>
+    
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="rechercheoffre.html" class="item-link item-content external">
+            <div class="item-media"><span class>  <i class="fa fa-search"></i> </span></div>
+            <div class="item-inner">
+              <div class="item-title">Rechercher</div>
+    
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="login.html" class="item-link item-content external" onclick="deconnecter();">
+            <div class="item-media"><span class>  <i class="fa fa-sign-out"></i> </span></div>
+            <div class="item-inner">
+              <div class="item-title">Déconnecter</div>
+    
+            </div>
+          </a>
+        </li>
+      </ul>
+
+</div>
+</div>
+  <div id="listeoffre" class="page-content">
+
+    <!--Card (Seccion)-->
+    <div class="content-block-title" style="color: transparent;"></div>
+   
+    
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Path to Framework7 Library JS-->
+        <script type="text/javascript" src="js/framework7.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="js/lightbox.js"></script>
+        <!-- Path to your app js-->
+        <script type="text/javascript" src="js/functions.js"></script>
+
+        <script>
+            
+          // Create a request variable and assign a new XMLHttpRequest object to it.
+      var request = new XMLHttpRequest()
+      
+      // Open a new connection, using the GET request on the URL endpoint
+      request.open('GET', 'http://192.168.43.47:3000/demandeoffres', true)
+      
+      request.onload = function() {
+      // Begin accessing JSON data here
+      
+      // Begin accessing JSON data here
+      var data = JSON.parse(this.response)
+      
+      console.log(data);
+      var j = 1;
+      var ee = document.getElementById("listeoffre");
+      data.forEach(i => {
+      
+      
+         if ((i.activite == "Hotel")  && (i.etat == "accepter") ){
+          var m = moment(i.date_demandeoffre);  
+var m1 = moment();  
+var str = i.periode;
+var res = str.substring(0,4);
+  m.add(res,'days')
+
+ console.log(m.toISOString());
+
+    if ( m1.toISOString() < m.toISOString()){
+  console.log(i._id);
+
+  ch = `
+
+      <br>
+      
+      
+      
+        <div class="card demo-card-header-pic c1">
+      
+      <div style="background-image:url(`+i.imagedemandeoffre +`)" valign="bottom" class="card-header color-white no-border">
+        <p class="title-c">`+i.nompartenaire +`</p></div>
+      <div class="card-content">
+      <div class="card-content-inner">
+        <p class="color-gray"></p>
+        <p>`+i.description +`.</p>
+      </div>
+      </div>
+      <div class="list-block accordion-list">
+      <ul>
+      <li class="accordion-item"><a href="#" class="item-content item-link">
+          <div class="item-inner">
+          <div class="item-title color-bluegray"> Plus d'informations</div>
+       </div></a>
+       <div class="accordion-item-content">
+          <p align="justify" style="padding-left:6px;padding-right:6px;">
+             <button onclick="window.location.href = ' `+i.l_fb+`';"> lien facebook</button><br>
+             <button onclick="window.location.href = ' `+i.l_insta+`';">lien instagram</button>
+  
+          </p>
+              <h4>Donnez une Note :</h4> 
+                <img id="Star1" src="StarOut.gif" />
+                <img id="Star2" src="StarOut.gif" />
+                <img id="Star3" src="StarOut.gif" />
+                <img id="Star4" src="StarOut.gif" />
+                <img id="Star5" src="StarOut.gif" />
+      
+       </div>
+       </li>
+        <li class="accordion-item"><a href="#" class="item-content item-link">
+          <div class="item-inner">
+          <div class="item-title color-red"><span class="icon-location"></span> Emplacement</div>
+       </div></a>
+       <div  class="accordion-item-content">
+        <iframe src="mapoffre.html" width="100%" height="250px" frameborder="2" seamless></iframe>
+       </div>
+       </li>    
+      </ul>
+      </div>
+      </div>
+ <br><br><br><br><br>
+      
+    `;
+            ee.insertAdjacentHTML('beforeend',ch);
+      
+          }else {
+
+var url_string = window.location.href
+var url = new URL(url_string);
+var url3 = "http://192.168.43.47:3000/demandeoffres/" + i._id ;
+var xhr3 = new XMLHttpRequest();
+xhr3.open("DELETE", url3, true);
+
+xhr3.onload = function () {
+	//var users = JSON.parse(xhr.responseText);
+	if (xhr3.readyState == 4 && xhr3.status == "200") {
+    console.log("supprime");
+    event.preventDefault();
+	} 
+} 
+
+xhr3.send(null);
+
+
+    }
+
+}
+
+})
+   
+}
+
+// Send request
+request.send()
+    
+    
+    </script>
+ <script>
+  // Initialize and add the map
+  function initMap() {
+    // The location of Uluru
+    var location = { lat: -25.344, lng: 131.036 };
+    // The map, centered at Uluru
+    var map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 4,
+      center: location,
+    });
+    const marker = new google.maps.Marker({
+    position: location,
+    map: map,
+  });
+    
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwSm5jzXFPj_vw5BctLCv6kayf-EkvgQc&callback=initMap&libraries=&v=weekly">
+</script>
+
+
+<script src="lib/moment/moment.min.js"></script>
+
+<script>
+           
+    // Create a request variable and assign a new XMLHttpRequest object to it.
+var request = new XMLHttpRequest()
+
+// Open a new connection, using the GET request on the URL endpoint
+request.open('GET', 'http://192.168.43.47:3000/publicites', true)
+
+request.onload = function() {
+// Begin accessing JSON data here
+
+// Begin accessing JSON data here
+var data = JSON.parse(this.response)
+
+console.log(data);
+var j = 1;
+var ee = document.getElementById("listeoffre");
+data.forEach(i => {
+
+  
+  if ((i.activite == "Hotel")  && (i.etat == "accepter")) {
+var m = moment(i.date_publicite);  
+var m1 = moment();  
+  m.add(i.periode,'days')
+
+ console.log(m.toISOString());
+
+    if ( m1.toISOString() < m.toISOString()){
+  console.log(i._id);
+
+  ch = `
+ 
+<br>
+  <div class="card demo-card-header-pic c1">
+
+<div style="background-image:url(`+i.imagepublicite +`)" valign="bottom" class="card-header color-white no-border">
+  <p class="title-c">`+i.nompartenaire +`</p></div>
+<div class="card-content">
+<div class="card-content-inner">
+  <p class="color-gray"></p>
+  <p>`+i.date_publicite +`.</p>
+</div>
+</div>
+
+</div>
+<br><br><br><br>
+
+ `;
+      ee.insertAdjacentHTML('beforeend',ch);
+
+    }else {
+
+var url_string = window.location.href
+var url = new URL(url_string);
+var url3 = "http://192.168.43.47:3000/publicites/" + i._id ;
+var xhr3 = new XMLHttpRequest();
+xhr3.open("DELETE", url3, true);
+
+xhr3.onload = function () {
+	//var users = JSON.parse(xhr.responseText);
+	if (xhr3.readyState == 4 && xhr3.status == "200") {
+    console.log("supprime");
+    event.preventDefault();
+	} 
+} 
+
+xhr3.send(null);
+
+
+    }
+
+}
+
+})
+   
+}
+
+// Send request
+request.send()
+    
+    
+    </script>
+
+ <script>
+   function lien(){
+    location.replace("index.html");
+   }
+
+  function ajouteravioffre(){
+
+    // Post a user
+  var url = "http://192.168.43.47:3000/avioffres";
+  
+  var data = {};
+              
+  data.continue  = cont;
+  data.nomclient = localStorage.getItem("nomclient");
+  data.prenomclient = localStorage.getItem("prenomclient");
+ 
+  var json = JSON.stringify(data);
+  
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+  xhr.onload = function () {
+    var avioffres = JSON.parse(xhr.responseText);
+    if (xhr.readyState == 4 && xhr.status == "200") {
+    console.table(avioffres);
+    alert("Merci de nous donnez votre avi ");
+    } else {
+      console.error(avioffres);
+      
+      
+    }
+  }
+  xhr.send(json);
+  }
+  
+  </script>
+
+<script>  
+  function deconnecter(){
+  
+  localStorage.removeItem("idclient");
+  localStorage.removeItem("nomclient");
+  localStorage.removeItem("login.html");
+  
+  }
+  </script>
+
+  </body>
+</html>

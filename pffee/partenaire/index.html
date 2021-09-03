@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Partenaire</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+  </head>
+  <body >
+    <div  class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+         
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item nav-logout d-none d-lg-block">
+              <a class="nav-link" href="index.html">
+                  <i class="mdi mdi-arrow-left-bold"></i>
+              </a>
+            </li>
+
+
+            <li class="nav-item nav-logout d-none d-lg-block" >
+              <a class="nav-link" href="notification.html" >
+                <i class="mdi mdi-bell-outline"></i>
+                <span id="notification" ></span>
+
+              </a>
+            </li>
+            <!--hna-->
+            <li class="nav-item nav-logout d-none d-lg-block" >
+              <a class="nav-link" href="login.html"  onclick="deconnecter();">
+                <i class="mdi mdi-power"></i>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+       </nav>
+       <!-- partial -->
+       <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row" id="proBanner">
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <span class="d-flex align-items-center purchase-popup">
+                  <i class="mdi mdi-account-outline icon-sm mr-2"></i> 
+                    <h1>  <span id="user" ></span> </h1>
+                   
+                  
+                  <a href="modifiepartenaire.html"  class="btn download-button purchase-button ml-auto">Modifier</a>
+                  
+                </span>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3 stretch-card grid-margin">
+                <div class="card bg-gradient-danger card-img-holder text-white">
+                  <div class="card-body">
+                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                     <i class="mdi mdi-account-plus"></i>
+                   <a href="pricing.html" style='color : white;'>
+                    <h2 class="mb-5" style='color : white;' >Deposer un offre</h2>
+                  </a>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="col-md-3 stretch-card grid-margin">
+                <div class="card bg-gradient-info card-img-holder text-white">
+                  <div class="card-body">
+                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                    <i class="mdi mdi-chart-line mdi-24px float-right"></i>
+                    <a href="listedesoffres.html" style='color : white;'>
+                    <h2 class="mb-5" style='color : white;'>Liste des offres</h2>
+                   </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 stretch-card grid-margin">
+                <div class="card bg-gradient-success card-img-holder text-white">
+                  <div class="card-body">
+                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                    <i class="mdi mdi-account-plus"></i>
+                    <a href="nouvellepublicite.html" style='color : white;'>
+                    <h2 class="mb-5" style='color : white;' >Deposer publicité</h2>
+                  </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 stretch-card grid-margin">
+                <div class="card bg-gradient-danger card-img-holder text-white">
+                  <div class="card-body">
+                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                     <i class="mdi mdi-chart-line mdi-24px float-right"></i>
+                   <a href="listepublicites.html" style='color : white;'>
+                    <h2 class="mb-5" style='color : white;' >liste des publicites</h2>
+                  </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          
+            <div class="row">
+              <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Recent Photos</h4>
+                    <div class="d-flex">
+                    </div> 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-6 pr-1"> 
+                <table  class="table table-striped">
+                  <tr id="imageoffre">
+                  
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+       </div>
+      <!-- page-body-wrapper ends -->
+     </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="assets/vendors/chart.js/Chart.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/hoverable-collapse.js"></script>
+    <script src="assets/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/todolist.js"></script>
+    <!-- End custom js for this page -->
+
+    <script>
+            
+      // Create a request variable and assign a new XMLHttpRequest object to it.
+    var request = new XMLHttpRequest()
+    
+    // Open a new connection, using the GET request on the URL endpoint
+    request.open('GET', 'http://192.168.43.47:3000/demandeoffres', true)
+    
+    request.onload = function() {
+    // Begin accessing JSON data here
+    
+    // Begin accessing JSON data here
+    var data = JSON.parse(this.response)
+    //var list = document.getElementById('listpatient');
+    var row = document.getElementById("imageoffre");
+    
+    console.log(data);
+    var j = 1;
+    data.forEach(i => {
+    if(localStorage.getItem("idpar") == i.idpartenaire){
+ 
+    var cell1 = row.insertCell(0);
+
+    cell1.innerHTML = `<img src="   `+ i.imagedemandeoffre  + `  "class="mb-2 mw-30 w-30 rounded" alt="image">`;
+         
+    j = j + 1 ;
+ }
+
+})
+     }
+    
+    // Send request
+    request.send()
+      
+      
+      </script>
+
+
+<script>
+document.getElementById("user").innerHTML = localStorage.getItem("nompar");
+
+</script>
+<script>  
+function deconnecter(){
+
+localStorage.removeItem("idpar");
+localStorage.removeItem("nompar");
+localStorage.removeItem("login.html");
+
+}
+</script>
+
+  </body>
+</html>

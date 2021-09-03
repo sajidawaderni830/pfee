@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title> Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/awesome-bootstrap-checkbox/0.3.7/awesome-bootstrap-checkbox.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body class="login">
+	<div class="container">
+		<div class="login-container-wrapper clearfix">
+			<ul class="switcher clearfix">
+				<li class="first logo active" data-tab="login">					
+						<a>Se connecter</a>			
+				</li>
+				<li class="second logo" data-tab="sign_up">
+						<a>S'inscrire</a>	
+				</li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane active" id="login">
+					<form class="form-horizontal login-form" onsubmit="return false;">
+						<div class="form-group relative">
+							<input class="form-control input-lg" id="email" placeholder="E-mail Address" required="" type="email"> <i class="fa fa-envelope-o"></i>
+						</div>
+
+						
+						
+						<div class="form-group relative">
+							<input class="form-control input-lg" id="mot_de_passe" placeholder="Password" required="" type="password"> <i class="fa fa-lock"></i>
+						</div>
+						<div class="form-group">
+							<button class="btn btn-success btn-lg btn-block" type="button" onclick="login();">Se connecter</button>
+						</div>
+						<div class="checkbox checkbox-success">
+							<input id="stay-sign" type="checkbox">
+              <label for="stay-sign">Rester connecté</label>
+						</div>
+            <hr />
+						<div class="text-center">
+							<label><a href="#">Mot de passe oublié?</a></label>
+						</div>
+					</form>
+				</div>
+				<div class="tab-pane" id="sign_up">
+					
+					<form class="form-horizontal login-form" onsubmit="return false;">
+						<div class="form-group relative">
+							<input class="form-control input-lg" id="noms" placeholder="Nom" required="" type="text"> <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+						</div>
+						<div class="form-group relative">
+							<input class="form-control input-lg" id="prenoms" placeholder="Prénom" required="" type="text"> <i class="fa fa-user"></i>
+						</div>
+						<div class="form-group relative">
+							<input class="form-control input-lg" id="emails" placeholder="E-mail Address" required="" type="email"> <i class="fa fa-envelope-o"></i>
+						</div>
+						<div class="form-group relative">
+							<input class="form-control input-lg" id="adresses" placeholder=" Address" required="" type="text"> <i class="fa fa-map-marker" aria-hidden="true"></i>
+						</div>
+						
+						<div class="form-group relative">
+							<input class="form-control input-lg" id="telephones" placeholder=" Téléphone" required="" type="text"> <i class="fa fa-mobile" aria-hidden="true"></i>
+						</div>
+						<div class="form-group relative">
+							<input class="form-control input-lg" id="date_naissances" placeholder="Date de naissance" required="" type="date"> <i class="fa fa-birthday-cake" aria-hidden="true"></i>
+						</div>
+						<div class="form-group relative">
+							<input class="form-control input-lg" id="mot_de_passes" placeholder="Password" required="" type="password"> <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+					
+							<button class="btn btn-success btn-lg btn-block" type="submit" onclick="sendatapat()">S'inscrire</button>
+
+						</div>
+						
+				
+						
+			
+						<div class="checkbox checkbox-success">
+							<input id="agree-terms" type="checkbox">
+              <label for="agree-terms"> Acceptez nos conditions</label>
+						</div>
+						<hr>
+						<div class="text-center">
+							<label><a href="#">Déjà membre?</a></label>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script><script  src="./script.js"></script>
+<script>
+	function login(){
+	var url = "http://192.168.43.47:3000/clients";
+	var email  = document.getElementById("email").value;
+	var password  = document.getElementById("mot_de_passe").value;
+	var xhr = new XMLHttpRequest(); // demande au serveur
+	xhr.open("GET", url, true); // table 
+	xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+	xhr.onload = function () {
+	  var clients = JSON.parse(xhr.responseText);
+	  if (xhr.readyState == 4 && xhr.status == "200") {
+			console.error(clients);
+			if (typeof(Storage) !== "undefined") {
+	localStorage.setItem("id", clients._id);
+  } else {
+	document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+  }
+  access = false;
+			for(i=0; i<clients.length; i++){
+			  if (clients[i].email == email && clients[i].mot_de_passe == password){
+					localStorage.setItem("idclient",clients[i]._id);
+					localStorage.setItem("nomclient",clients[i].nom);
+					localStorage.setItem("prenomclient",clients[i].prenom);
+					localStorage.setItem("email",clients[i].email);
+				access = true ;
+			  }
+			}
+			if (access){
+			  location.replace("Accueil.html");
+			}
+			else{
+			  alert("invalid login or password !");
+			}
+	  } else {
+			console.log(clients.message);
+
+	  }
+	}
+	xhr.send();
+	}
+  </script>
+  <script>
+
+	function sendatapat(){
+	
+		// Post a user
+	var url = "http://192.168.43.47:3000/clients";
+	
+	var data = {};
+
+	data.email  = document.getElementById("emails").value;
+	data.mot_de_passe  = document.getElementById("mot_de_passes").value;
+	data.telephone  = document.getElementById("telephones").value;
+	data.adress  = document.getElementById("adresses").value;
+	data. nom   = document.getElementById("noms").value;
+	data. prenom   = document.getElementById("prenoms").value;
+	data. date_naissance   = document.getElementById("date_naissances").value;
+	
+	
+	
+	var json = JSON.stringify(data);
+	
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+	xhr.onload = function () {
+	  var clients = JSON.parse(xhr.responseText);
+	  if (xhr.readyState == 4 && xhr.status == "200") {
+
+		location.replace("login.html");
+       
+
+	  } else {
+			alert(clients.message);
+	  }
+	}
+	xhr.send(json);
+	}
+	
+  
+  
+  
+	
+	</script>
+
+</body>
+</html>

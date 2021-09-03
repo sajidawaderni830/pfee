@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Notifications</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+  </head>
+  <body >
+    <div  class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+         
+            <ul class="navbar-nav navbar-nav-right">
+              <li class="nav-item nav-logout d-none d-lg-block">
+                <a class="nav-link" href="index.html">
+                    <i class="mdi mdi-arrow-left-bold"></i>
+                </a>
+              </li>
+  
+  
+              <li class="nav-item nav-logout d-none d-lg-block" >
+                <a class="nav-link" href="notification.html" >
+                  <i class="mdi mdi-bell-outline"></i>
+                  <span id="notificationp" ></span>
+  
+                </a>
+              </li>
+              <!--hna-->
+              <li class="nav-item nav-logout d-none d-lg-block" >
+                <a class="nav-link" href="login.html"  onclick="deconnecter();">
+                  <i class="mdi mdi-power"></i>
+                </a>
+              </li>
+            </ul>
+  
+          </div>
+       </nav>
+      <!-- partial -->
+      <div class="col-lg-10 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <br><br>
+            <h4 class="card-title">Notifications</h4>
+            <table class="table table-dark" id="listrefese" >
+              <tbody>
+                <tr>
+  
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-bordered" id="listaccepte" >
+              <tbody>
+                <tr class="table-info">
+  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/hoverable-collapse.js"></script>
+    <script src="assets/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <!-- End custom js for this page -->
+
+    <script>
+            
+      // Create a request variable and assign a new XMLHttpRequest object to it.
+    var request = new XMLHttpRequest()
+    
+    // Open a new connection, using the GET request on the URL endpoint
+    request.open('GET', 'http://192.168.43.47:3000/demandeoffres', true)
+    
+    request.onload = function() {
+    // Begin accessing JSON data here
+    
+    // Begin accessing JSON data here
+    var data = JSON.parse(this.response)
+    //var list = document.getElementById('listpatient');
+    var table = document.getElementById("listrefese");
+    
+    console.log(data);
+    var j=0;
+    data.forEach(i => {
+      
+    if((localStorage.getItem("idpar") == i.idpartenaire)&& (i.etat == "en attend")){
+      
+    
+    var row = table.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    cell1.innerHTML =`            
+                                
+                                  <p > 
+                                    On ne peut pas accepter <a href='viewoffre.html?id=`+ i._id +`'> votre offre </a> 
+                                    contacter Administrateur 
+                                  </p>	 `;
+      j=j+1;
+} localStorage.setItem("not", j);
+ })
+
+  }
+     // Send request
+    request.send()
+      </script>
+
+
+    <script>
+            
+      // Create a request variable and assign a new XMLHttpRequest object to it.
+    var request = new XMLHttpRequest()
+    
+    // Open a new connection, using the GET request on the URL endpoint
+    request.open('GET', 'http://192.168.43.47:3000/demandeoffres', true)
+    
+    request.onload = function() {
+    // Begin accessing JSON data here
+    
+    // Begin accessing JSON data here
+    var data = JSON.parse(this.response)
+    //var list = document.getElementById('listpatient');
+    var table = document.getElementById("listaccepte");
+    
+    console.log(data);
+    data.forEach(i => {
+    if((localStorage.getItem("idpar") == i.idpartenaire)&& (i.etat == "accepter")){
+      
+    
+    var row = table.insertRow(-1);
+    var cell1 = row.insertCell(0);
+        cell1.innerHTML = `  
+                                 <a href='viewoffre.html?id=`+ i._id +`'>
+                                  <p > 
+																	l'offre accepté 
+                                  </p>	</a> 	`;
+       }
+
+ })
+  }
+     // Send request
+    request.send()
+      </script>
+      <script>
+        document.getElementById("notificationp").innerHTML = localStorage.getItem("not");
+        </script>
+  </body>
+</html>

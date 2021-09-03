@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Deposer Offre</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+  </head>
+  <body >
+    <div  class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+         
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item nav-logout d-none d-lg-block">
+              <a class="nav-link" href="index.html">
+                  <i class="mdi mdi-arrow-left-bold"></i>
+              </a>
+            </li>
+
+
+            <li class="nav-item nav-logout d-none d-lg-block" >
+              <a class="nav-link" href="notification.html" >
+                <i class="mdi mdi-bell-outline"></i>
+
+              </a>
+            </li>
+            <!--hna-->
+            <li class="nav-item nav-logout d-none d-lg-block" >
+              <a class="nav-link" href="login.html"  onclick="deconnecter();">
+                <i class="mdi mdi-power"></i>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+       </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+       
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title">  Offre </h3>
+             
+            </div>
+            <div class="row">
+
+              <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+
+                    <span id="result"></span>
+                    <br>
+
+                    <h4 class="card-title">Ajouter Offre</h4>
+                    <p class="card-description">  </p>
+                    <form class="forms-sample">
+                      <div class="form-group">
+                        <label for="exampleInputdate_deb">Période</label>
+                        
+                          <input class="form-control" id="periode" disabled="true" />
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleInputdate_deb">Prix</label>
+                        
+                          <input class="form-control" id="prix" disabled="true" />
+                      </div>
+                     
+
+                      <div class="form-group">
+                        <label for="exampleInputdate_deb">Date</label>
+                        
+                          <input class="form-control" id="date_demandeoffre" type="date" />
+                      </div>
+                     
+                      <div class="form-group">
+                       
+                        <div class="input-group col-xs-12">
+                          
+                          <span class="input-group-append">
+                              
+                              <button type="button" class="btn btn-gradient-success btn-fw" onclick="send();">Télecharger une image</button>
+                            <input type="hidden" id="i">   
+                          </span>
+                        </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="description">Descriotion</label>
+                        <textarea class="form-control" id="description" rows="4"></textarea>
+                      </div>
+                      <button type="button" class="btn btn-gradient-danger btn-fw" onclick="ajouteroffre()">Envoyer</button>
+                      <button type="button" class="btn btn-inverse-warning btn-fw" onclick="Annuler()">Annuler</button>
+                        
+                        
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block"> <a href="https://www.bootstrapdash.com/" target="_blank"></a></span>
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <i class="mdi mdi-heart text-danger"></i></span>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/hoverable-collapse.js"></script>
+    <script src="assets/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="assets/js/file-upload.js"></script>
+    <!-- End custom js for this page -->
+    <script src="https://static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
+
+    <script>
+    function Annuler(){
+
+      location.reload();
+    }
+    </script>
+
+<script>
+
+var urlo = window.location.href;
+var url = new URL(urlo);
+var offre = url.searchParams.get("id");
+
+if ( offre == "25"){
+  document.getElementById("periode").value = "10  jours";
+  document.getElementById("prix").value = "25 dinar";
+
+}
+
+if ( offre == "50"){
+  document.getElementById("periode").value = "20  jours";
+  document.getElementById("prix").value = "50 dinar";
+
+}
+
+if ( offre == "100"){
+  document.getElementById("periode").value = "30  jours";
+  document.getElementById("prix").value = "90 dinar";
+
+}
+
+</script>
+
+<script>
+
+function send(){
+var i = document.getElementById("i");
+  const apikey = 'AtySomyfLQmGrXXE1F8Tsz';
+  const client = filestack.init(apikey);
+  const options = {
+    maxFiles: 20,
+    uploadInBackground: false,
+    onOpen: () => console.log('opened!'),
+    onUploadDone: (res) =>  i.value =res.filesUploaded[0].url ,
+  };
+  client.picker(options).open();
+
+}
+
+</script>
+
+
+      <script>
+        function ajouteroffre(){
+        
+          // Post a user
+        var url = "http://192.168.43.47:3000/demandeoffres";
+         
+        var data = {};
+        data.description = document.getElementById("description").value;
+        data.periode  = document.getElementById("periode").value;
+        data.prix = document.getElementById("prix").value;
+        data.imagedemandeoffre = document.getElementById("i").value;
+        data.idpartenaire = localStorage.getItem("idpar");
+        data.nompartenaire = localStorage.getItem("nompar");
+        data.l_fb = localStorage.getItem("fbp");
+        data.l_insta = localStorage.getItem("instap");
+        data.activite = localStorage.getItem("activite");
+        data.date_demandeoffre = document.getElementById("date_demandeoffre").value;
+        data.etat = "en attend";
+
+        var json = JSON.stringify(data);
+        console.log(json);
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+        xhr.onload = function () {
+          var offres = JSON.parse(xhr.responseText);
+          if (xhr.readyState == 4 && xhr.status == "200") {
+       	
+				document.getElementById("result").innerHTML = 	  
+			`<div class="alert alert-block alert-success" >
+				<center>
+					<button type="button" class="close" data-dismiss="alert">
+					 <i class="ace-icon fa fa-times"></i>
+					</button>
+					<h1><i class="ace-icon fa fa-check green"></i>
+						Offre ajouté		
+					</h1><strong class="green"></strong>
+					</center>
+                   </div>`;
+ 
+				 
+			     //location.replace("index.html");
+			  } else {
+				document.getElementById("result").innerHTML = offres.message;
+					console.error(offres);
+	       
+					
+			  }
+			}
+        xhr.send(json);
+        }
+        
+        </script>
+  </body>
+</html>

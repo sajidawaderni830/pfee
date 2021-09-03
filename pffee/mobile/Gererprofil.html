@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>Gérer profile</title>
+    <!-- Path to Framework7 Library CSS, Material Theme -->
+    <link rel="stylesheet" href="css/framework7.material.min.css">
+    <!-- Path to Framework7 color related styles, Material Theme -->
+    <link rel="stylesheet" href="css/framework7.material.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="fonts.css">
+    <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
+    <link rel="stylesheet" href="./gerer.css">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/awesome-bootstrap-checkbox/0.3.7/awesome-bootstrap-checkbox.min.css'><link rel="stylesheet" href="./style.css">
+    <style>
+    
+
+    </style>
+      </head>
+  <body>
+  <div class="statusbar-overlay"></div>
+    <!-- Views -->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main">
+        <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-fixed toolbar-fixed">
+          <!-- Page, "data-page" contains page name -->
+          <div data-page="index" class="page">
+
+            <!-- Top Navbar. In Material theme it should be inside of the page-->
+            <div class="navbar theme-lightpink">
+              <div class="navbar-inner">
+               <a href="#" data-panel="left" class="open-panel"><img src="images/menu.svg" width="28px" class="menu"></a>
+
+              </div>
+            </div>
+              <!-- Panels Overlay -->
+  <div class="panel-overlay"></div>
+
+
+  <!-- Right Panel with Cover effect -->
+  <div class="panel panel-left panel-cover">
+
+      <div class="list-block">
+        <ul >
+          <li> 
+            <a href="Accueil.html" class="item-link item-content external">
+                <div class="item-media"><span class>  <i class="fa fa-home"></i> </span></div>
+                <div class="item-inner">
+                <div class="item-title">Accueil</div>
+                </div>
+            </a>
+          </li>
+          <li>
+            <a href="profile.html" class="item-link item-content external">
+              <div class="item-media"><span class="icon-happy"></span></div>
+              
+                <div class="item-inner">
+                <div class="item-title">Profile</div>
+                </div>
+            </a>
+          </li>
+          <li>
+            <a href="quefaire.html" class="item-link item-content external">
+                <div class="item-media"><span class="icon-star-full"></span></div>
+                <div class="item-inner">
+                <div class="item-title"><b>Que faire</b></div>
+                </div>
+            </a>
+          </li>
+          <li>
+            <a href="visitar.html" class="item-link item-content external">
+                <div class="item-media"><span class="icon-camera"></span></div>
+                <div class="item-inner">
+                <div class="item-title">Que visiter</div>
+                </div>
+            </a>
+          </li>
+          <li>
+            <a href="restaurant.html" class="item-link item-content external">
+              <div class="item-media"><span class="icon-spoon-knife"></span></div>
+              <div class="item-inner">
+                <div class="item-title">Où manger</div>
+      
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="salondethe.html" class="item-link item-content external">
+              <div class="item-media"><span class="icon-glass2"></span></div>
+              <div class="item-inner">
+                <div class="item-title">Salon de thé</div>
+      
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="hotels.html" class="item-link item-content external">
+              <div class="item-media"><span class="icon-office"></span></div>
+              <div class="item-inner">
+                <div class="item-title">Où se reposer</div>
+      
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="recherche.html" class="item-link item-content external">
+                <div class="item-media"><span class="icon-location2"></span></div>
+                <div class="item-inner">
+                <div class="item-title">La carte</div>
+                </div>
+            </a>
+          </li>
+          <li>
+            <a href="apropos.html" class="item-link item-content external">
+              <div class="item-media"><span class="icon-info"></span></div>
+              <div class="item-inner">
+                <div class="item-title">À propos de</div>
+      
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="rechercheoffre.html" class="item-link item-content external">
+              <div class="item-media"><span class>  <i class="fa fa-search"></i> </span></div>
+              <div class="item-inner">
+                <div class="item-title">Rechercher</div>
+      
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="login.html" class="item-link item-content external" onclick="deconnecter();">
+              <div class="item-media"><span class>  <i class="fa fa-sign-out"></i> </span></div>
+              <div class="item-inner">
+                <div class="item-title">Déconnecter</div>
+      
+              </div>
+            </a>
+          </li>
+        </ul>
+
+</div>
+  </div>
+
+  <div class="page-content">
+
+    
+      <h1>Modifier votre profil</h1>
+      <span id="result"></span>
+      <form onsubmit="return false;">
+        <label for="fname">Nom </label>
+        <input type="text" id="name"  placeholder="Votre nom ">
+
+        <label for="fname">Prénom </label>
+        <input type="text" id="name2"  placeholder="Votre Prénom ">
+    
+        <label for="sujet">Adresse</label>
+        <input type="text" id="adr"  placeholder="Votre adresse">
+    
+        <label for="emailAddress">Email</label>
+        <input id="emailAddress" type="email"  placeholder="Votre email">
+    
+    
+        <label for="fname">Téléphone </label>
+        <input type="text" id="tel"  placeholder="Votre numéro de téléphone ">
+
+        <label for="fname">Mot de passe </label>
+        <input type="text" id="mp"  placeholder="Votre nouvelle mot de passe ">
+
+        <label for="fname">Confirmer Mot de passe </label>
+        <input type="text" id="mp2"  placeholder="Votre nouvelle mot de passe ">
+    
+        <input type="button" value="Modifier" onclick="modifier();">
+        </form>
+     
+     </div>
+       
+
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/functions.js"></script>
+
+
+    <script>
+
+
+        var url_string = window.location.href
+        var url = new URL(url_string);
+        var c = url.searchParams.get("id");
+        console.log(c);
+        c = localStorage.getItem("idclient");
+        
+        var url3 = "http://192.168.43.47:3000/clients/" + c ;
+        
+        
+        var request = new XMLHttpRequest();
+        
+        
+        // Open a new connection, using the GET request on the URL endpoint
+        request.open('GET', url3, true)
+        
+        request.onload = function() {
+        // Begin accessing JSON data here
+        
+        // Begin accessing JSON data here
+        var data = JSON.parse(this.response)
+        
+        
+        
+        
+        document.getElementById("emailAddress").value  = data.email ;
+            document.getElementById("mp").value   = data.mot_de_passe ;
+               document.getElementById("tel").value   = data.telephone ;
+               document.getElementById("adr").value   = data.adress ;
+             document.getElementById("name").value   = data.nom ;
+             document.getElementById("name2").value   = data.prenom ;
+              
+        
+        
+        
+        }
+        
+        // Send request
+        request.send()
+        
+        
+        
+        </script>
+
+
+
+    <script>
+			function modifier(){ 
+		
+				// Post a user
+                var url_string = window.location.href
+var url = new URL(url_string);
+c = localStorage.getItem("idclient");
+var url3 = "http://192.168.43.47:3000/clients/" + c ;
+console.log(c);
+if (document.getElementById("mp2").value == document.getElementById("mp").value)
+{
+			var data = {};
+
+			data.email  = document.getElementById("emailAddress").value;
+			data.mot_de_passe = document.getElementById("mp").value;
+			data.telephone  = document.getElementById("tel").value;
+			data.adress  = document.getElementById("adr").value;
+			data.nom  = document.getElementById("name").value;
+			data. prenom = document.getElementById("name2").value;
+		
+			var json = JSON.stringify(data);
+			
+			var xhr = new XMLHttpRequest();
+			xhr.open("PUT", url3, true);
+			xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+			xhr.onload = function () {
+			  var clients = JSON.parse(xhr.responseText);
+			  if (xhr.readyState == 4 && xhr.status == "200") {
+
+          document.getElementById("result").innerHTML = 	  
+			`<div class="alert alert-block alert-success" >
+				<center>
+					<h2> profil modifieé </h2>
+					</center>
+                   </div>`;
+			//location.replace("profile.html");
+				
+			  } else {
+					console.error(clients);
+	
+					
+			  }
+			}
+			xhr.send(json);
+    }else{
+			document.getElementById("result").innerHTML = 	  
+			`<div class="alert alert-block alert-danger" >
+				<center>
+					
+					<p>
+						Confirmer votre mot de passe		
+					</p>
+					</center>
+                   </div>`;
+		  	}
+		}
+      </script>
+      <script>  
+        function deconnecter(){
+        
+        localStorage.removeItem("idclient");
+        localStorage.removeItem("nomclient");
+        localStorage.removeItem("login.html");
+        
+        }
+        </script>
+  </body>
+</html>

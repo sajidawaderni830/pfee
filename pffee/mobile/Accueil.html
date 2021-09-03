@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>Accueil</title>
+    <!-- Path to Framework7 Library CSS, Material Theme -->
+    <link rel="stylesheet" href="css/framework7.material.min.css">
+    <!-- Path to Framework7 color related styles, Material Theme -->
+    <link rel="stylesheet" href="css/framework7.material.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="fonts.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/awesome-bootstrap-checkbox/0.3.7/awesome-bootstrap-checkbox.min.css'><link rel="stylesheet" href="./style.css">
+<style>
+  .site-footer
+{
+  background-color:#26272b;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h1
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px;
+  text-align:center
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center;
+    margin-top:2px;
+ margin-right:2px;
+ margin-bottom:2em;
+ margin-left:2px
+  }
+}
+
+
+
+
+</style>
+
+  </head>
+  <body >
+    <!-- Views -->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main">
+        <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-fixed toolbar-fixed">
+          <!-- Page, "data-page" contains page name -->
+          <div data-page="index" class="page" ng-controller="IndexPageController">
+
+            <!-- Top Navbar. In Material theme it should be inside of the page-->
+            <div class="navbar theme-blue">
+              <div class="navbar-inner">
+              <a href="#" data-panel="left" class="open-panel"><img src="images/menu.svg" width="28px" class="menu"></a>
+              <div class="center"><small>Accueil</small></div>
+              </div> 
+            </div>
+              <!-- Panels Overlay -->
+  <div class="panel-overlay"></div>
+
+
+  <!-- Right Panel with Cover effect -->
+  <div class="panel panel-left panel-cover">
+
+  <div class="list-block">
+    <ul >
+      <li>
+        <a href="Accueil.html" class="item-link item-content external">
+            <div class="item-media"><span class>  <i class="fa fa-home"></i> </span></div>
+            <div class="item-inner">
+            <div class="item-title">Accueil</div>
+            </div>
+        </a>
+      </li>
+      <li>
+        <a href="profile.html" class="item-link item-content external">
+          <div class="item-media"><span class="icon-happy"></span></div>
+          
+            <div class="item-inner">
+            <div class="item-title">Profile</div>
+            </div>
+        </a>
+      </li>
+      <li>
+        <a href="quefaire.html" class="item-link item-content external">
+            <div class="item-media"><span class="icon-star-full"></span></div>
+            <div class="item-inner">
+            <div class="item-title"><b>Que faire</b></div>
+            </div>
+        </a>
+      </li>
+      <li>
+        <a href="visitar.html" class="item-link item-content external">
+            <div class="item-media"><span class="icon-camera"></span></div>
+            <div class="item-inner">
+            <div class="item-title">Que visiter</div>
+            </div>
+        </a>
+      </li>
+      <li>
+        <a href="restaurant.html" class="item-link item-content external">
+          <div class="item-media"><span class="icon-spoon-knife"></span></div>
+          <div class="item-inner">
+            <div class="item-title">Où manger</div>
+  
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="salondethe.html" class="item-link item-content external">
+          <div class="item-media"><span class="icon-glass2"></span></div>
+          <div class="item-inner">
+            <div class="item-title">Salon de thé</div>
+  
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="hotels.html" class="item-link item-content external">
+          <div class="item-media"><span class="icon-office"></span></div>
+          <div class="item-inner">
+            <div class="item-title">Où se reposer</div>
+  
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="recherche.html" class="item-link item-content external">
+            <div class="item-media"><span class="icon-location2"></span></div>
+            <div class="item-inner">
+            <div class="item-title">La carte</div>
+            </div>
+        </a>
+      </li>
+      <li>
+        <a href="apropos.html" class="item-link item-content external">
+          <div class="item-media"><span class="icon-info"></span></div>
+          <div class="item-inner">
+            <div class="item-title">À propos de</div>
+  
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="rechercheoffre.html" class="item-link item-content external">
+          <div class="item-media"><span class>  <i class="fa fa-search"></i> </span></div>
+          <div class="item-inner">
+            <div class="item-title">Rechercher</div>
+  
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="login.html" class="item-link item-content external" onclick="deconnecter();">
+          <div class="item-media"><span class>  <i class="fa fa-sign-out"></i> </span></div>
+          <div class="item-inner">
+            <div class="item-title">Déconnecter</div>
+  
+          </div>
+        </a>
+      </li>
+    </ul>
+ 
+</div>
+</div>
+
+
+  <div class="page-content">
+  <div class="card demo-card-header-pic" style="margin-top:-25px;">
+      
+      <div style="background-image:url(images/acc.jpg)" valign="bottom" class="card-header color-white no-border">
+      </div>
+      <div class="card-content">
+      <div class="card-content-inner">
+        
+        <p align="justify">Ce n'est peut-être qu'un mince coin de la vaste étendue horizontale de l'Afrique du Nord,
+           mais la Tunisie a suffisamment d'histoire et de beauté naturelle diversifiée pour emballer un pays plusieurs fois sa taille.
+            Avec une côte méditerranéenne douce et bordée de sable, parfumée au jasmin et aux brises de mer, 
+            et où le poisson dans votre assiette est toujours frais, 
+            la Tunisie est le territoire privilégié pour des vacances directes soleil-sable-mer.
+        </p>
+
+        <a href="images/carte-touristique-de-la-tunisie.jpg" data-lightbox="image-1" data-title="" class="lazy lazy-fadeIn">
+          <img src="images/carte-touristique-de-la-tunisie.jpg" width="100%"/></a>
+      </div>
+    </div>
+
+    </div>
+
+    <div class="card demo-card-header-pic" style="margin-top:-25px;">
+      <div class="card-content">
+      <div class="card-content-inner">
+
+        <a href="images/pic04.jpg" data-lightbox="image-1" data-title="" class="lazy lazy-fadeIn">
+          <img src="images/pic04.jpg" width="100%"/></a>
+      </div>
+    </div>
+    </div>
+
+    <div class="card demo-card-header-pic" style="margin-top:-25px;">
+      <div class="card-content">
+      <div class="card-content-inner">
+
+        <a href="images/pic01.jpg" data-lightbox="image-1" data-title="" class="lazy lazy-fadeIn">
+          <img src="images/pic01.jpg" width="100%"/></a>
+      </div>
+    </div>
+    </div>
+
+    <div class="card demo-card-header-pic" style="margin-top:-25px;">
+      <div class="card-content">
+      <div class="card-content-inner">
+
+        <a href="images/pic08.jpg" data-lightbox="image-1" data-title="" class="lazy lazy-fadeIn">
+          <img src="images/pic08.jpg" width="100%"/></a>
+      </div>
+    </div>
+    </div>
+
+    <div class="card demo-card-header-pic" style="margin-top:-25px;">
+      <div class="card-content">
+      <div class="card-content-inner">
+
+        <a href="images/pic03.jpg" data-lightbox="image-1" data-title="" class="lazy lazy-fadeIn">
+          <img src="images/pic03.jpg" width="100%"/></a>
+      </div>
+    </div>
+    </div>
+
+    <div class="card demo-card-header-pic" style="margin-top:-25px;">
+      <div class="card-content">
+      <div class="card-content-inner">
+
+        <a href="images/pic02.jpg" data-lightbox="image-1" data-title="" class="lazy lazy-fadeIn">
+          <img src="images/pic02.jpg" width="100%"/></a>
+      </div>
+    </div>
+    </div>
+
+    <div class="card demo-card-header-pic" style="margin-top:-25px;">
+      <div class="card-content">
+      <div class="card-content-inner">
+
+        <a href="images/pic05.jpg" data-lightbox="image-1" data-title="" class="lazy lazy-fadeIn">
+          <img src="images/pic05.jpg" width="100%"/></a>
+      </div>
+    </div>
+    </div>
+
+    <div class="card demo-card-header-pic" style="margin-top:-25px;">
+      <div class="card-content">
+      <div class="card-content-inner">
+
+        <a href="images/pic06.jpg" data-lightbox="image-1" data-title="" class="lazy lazy-fadeIn">
+          <img src="images/pic06.jpg" width="100%"/></a>
+      </div>
+    </div>
+    </div>
+
+    <div class="card demo-card-header-pic" style="margin-top:-25px;">
+      <div class="card-content">
+      <div class="card-content-inner">
+
+        <a href="images/pic09.jpg" data-lightbox="image-1" data-title="" class="lazy lazy-fadeIn">
+          <img src="images/pic09.jpg" width="100%"/></a>
+      </div>
+    </div>
+    </div>
+
+    <div class="card demo-card-header-pic" style="margin-top:-25px;">
+      <div class="card-content">
+      <div class="card-content-inner">
+
+        <a href="images/pic10.jpg" data-lightbox="image-1" data-title="" class="lazy lazy-fadeIn">
+          <img src="images/pic10.jpg" width="100%"/></a>
+      </div>
+    </div>
+    </div>
+
+    <div class="card demo-card-header-pic" style="margin-top:-25px;">
+      <div class="card-content">
+      <div class="card-content-inner">
+
+        <a href="images/pic11.jpg" data-lightbox="image-1" data-title="" class="lazy lazy-fadeIn">
+          <img src="images/pic11.jpg" width="100%"/></a>
+      </div>
+    </div>
+    </div>
+
+    <div class="card demo-card-header-pic" style="margin-top:-25px;">
+      <div class="card-content">
+      <div class="card-content-inner">
+
+        <a href="images/pic12.jpg" data-lightbox="image-1" data-title="" class="lazy lazy-fadeIn">
+          <img src="images/pic12.jpg" width="100%"/></a>
+      </div>
+    </div>
+    </div>
+
+    <div class="card demo-card-header-pic" style="margin-top:-25px;">
+      <div class="card-content">
+      <div class="card-content-inner">
+
+        <a href="images/pic13.jpg" data-lightbox="image-1" data-title="" class="lazy lazy-fadeIn">
+          <img src="images/pic13.jpg" width="100%"/></a>
+      </div>
+    </div>
+    </div>
+
+    <div class="card demo-card-header-pic" style="margin-top:-25px;">
+      <div class="card-content">
+      <div class="card-content-inner">
+
+        <a href="images/pic14.jpg" data-lightbox="image-1" data-title="" class="lazy lazy-fadeIn">
+          <img src="images/pic14.jpg" width="100%"/></a>
+      </div>
+    </div>
+    </div>
+
+    <div class="card demo-card-header-pic" style="margin-top:-25px;">
+      <div class="card-content">
+      <div class="card-content-inner">
+
+        <a href="images/pic015.jpg" data-lightbox="image-1" data-title="" class="lazy lazy-fadeIn">
+          <img src="images/pic15.jpg" width="100%"/></a>
+      </div>
+    </div>
+    </div>
+
+    <div class="card demo-card-header-pic" style="margin-top:-25px;">
+      <div class="card-content">
+      <div class="card-content-inner">
+
+        <a href="images/pic016.jpg" data-lightbox="image-1" data-title="" class="lazy lazy-fadeIn">
+          <img src="images/pic16.jpg" width="100%"/></a>
+      </div>
+    </div>
+    </div>
+    
+   
+
+    
+           <!-- Site footer -->
+           <footer class="site-footer">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                  <h1>Tunisie </h1>
+                  <p class="copyright-text">
+                 
+                    Bienvenue dans un pays où vous ferez le plein de ciel bleu et de soleil, 
+                    dont vous découvrirez le patrimoine exceptionnel et les traditions originales,
+                     où vous goûterez les paysages lumineux, le désert accueillant,
+                     la mer scintillante… Un pays à vivre en famille en toute tranquillité ou au rythme de vos passions.
+                  </p>
+                </div>
+                
+              </div>
+            </div>
+          </footer>
+    </div>
+</div>
+
+
+
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="js/lightbox.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/functions.js"></script>
+    <script>  
+			function deconnecter(){
+			
+			localStorage.removeItem("idclient");
+			localStorage.removeItem("nomclient");
+			localStorage.removeItem("login.html");
+			
+			}
+			</script>
+  </body>
+</html>
